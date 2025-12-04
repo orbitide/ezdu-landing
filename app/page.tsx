@@ -4,8 +4,6 @@ import { Features } from "@/components/features";
 import { EdtechModules } from "@/components/modules";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonals";
-import { Blog } from "@/components/blog";
-import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -19,8 +17,8 @@ export default function Home() {
             <EdtechModules />
             <Pricing />
             <Testimonials />
-            <Blog />
-            <Contact />
+            {/*<Blog />*/}
+            {/*<Contact />*/}
             <Footer />
 
         </div>

@@ -1,13 +1,11 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Award, ChevronRight, GraduationCap, Sparkles, Trophy } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Apple, Award, Download, GraduationCap, Sparkles, Trophy } from "lucide-react";
 
 export const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                     animate={{
@@ -64,34 +62,44 @@ export const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Button>
-                            Start Learning Free
-                            <ChevronRight size={20} />
-                        </Button>
-                        <Button variant="outline">
-                            Watch Demo
-                        </Button>
+                        <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
+                            <Apple size={20} />
+                            <div className="text-left">
+                                <div className="text-xs text-gray-300">Download on</div>
+                                <div className="text-lg font-semibold">App Store</div>
+                            </div>
+                        </button>
+
+                        <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
+                            <Download size={20} />
+                            <div className="text-left">
+                                <div className="text-xs text-gray-300">Get it on</div>
+                                <div className="text-lg font-semibold">Google Play</div>
+                            </div>
+                        </button>
                     </div>
 
-                    <motion.div
-                        className="flex items-center gap-8 mt-12"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                    >
-                        <div>
-                            <div className="text-3xl font-bold text-emerald-400">10K+</div>
-                            <div className="text-gray-400 text-sm">Active Students</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-bold text-teal-400">50K+</div>
-                            <div className="text-gray-400 text-sm">Questions Solved</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-bold text-cyan-400">4.8★</div>
-                            <div className="text-gray-400 text-sm">App Rating</div>
-                        </div>
-                    </motion.div>
+                    {/*<motion.div*/}
+                    {/*    className="flex items-center gap-8 mt-12"*/}
+                    {/*    initial={{ opacity: 0 }}*/}
+                    {/*    animate={{ opacity: 1 }}*/}
+                    {/*    transition={{ delay: 0.6 }}*/}
+                    {/*>*/}
+                    {/*    <div>*/}
+                    {/*        <div className="text-3xl font-bold text-emerald-400">10K+</div>*/}
+                    {/*        <div className="text-gray-400 text-sm">Active Students</div>*/}
+                    {/*    </div>*/}
+                    {/*    <div>*/}
+                    {/*        <div className="text-3xl font-bold text-teal-400">50K+</div>*/}
+                    {/*        <div className="text-gray-400 text-sm">Questions Solved</div>*/}
+                    {/*    </div>*/}
+                    {/*    <div>*/}
+                    {/*        <div className="text-3xl font-bold text-cyan-400">4.8★</div>*/}
+                    {/*        <div className="text-gray-400 text-sm">App Rating</div>*/}
+                    {/*    </div>*/}
+                    {/*</motion.div>*/}
+
+
                 </motion.div>
 
                 <motion.div

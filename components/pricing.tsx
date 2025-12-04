@@ -16,7 +16,7 @@ export const Pricing = () => {
     const plans = {
         free: {
             name: 'Free',
-            price: '$0',
+            price: '৳0',
             description: 'Perfect for getting started',
             features: [
                 '100 questions per day',
@@ -30,7 +30,7 @@ export const Pricing = () => {
         },
         premium: {
             name: 'Premium',
-            price: activeTab === 'Monthly' ? '$9.99' : '$79.99',
+            price: activeTab === 'Monthly' ? '৳9.99' : '৳79.99',
             period: activeTab === 'Monthly' ? '/month' : '/year',
             description: 'Unlock your full potential',
             features: [
