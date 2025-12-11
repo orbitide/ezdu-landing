@@ -1,37 +1,38 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Apple, Award, Download, GraduationCap, Sparkles, Trophy } from "lucide-react";
+import { Apple, Award, Download, Sparkles, Trophy } from "lucide-react";
+import Image from "next/image";
 
 export const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            <div className="absolute inset-0 overflow-hidden">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        rotate: [360, 180, 0],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
-                />
-            </div>
+            {/*<div className="absolute inset-0 overflow-hidden">*/}
+            {/*    <motion.div*/}
+            {/*        animate={{*/}
+            {/*            scale: [1, 1.2, 1],*/}
+            {/*            rotate: [0, 180, 360],*/}
+            {/*        }}*/}
+            {/*        transition={{*/}
+            {/*            duration: 20,*/}
+            {/*            repeat: Infinity,*/}
+            {/*            ease: "linear"*/}
+            {/*        }}*/}
+            {/*        className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"*/}
+            {/*    />*/}
+            {/*    <motion.div*/}
+            {/*        animate={{*/}
+            {/*            scale: [1, 1.3, 1],*/}
+            {/*            rotate: [360, 180, 0],*/}
+            {/*        }}*/}
+            {/*        transition={{*/}
+            {/*            duration: 15,*/}
+            {/*            repeat: Infinity,*/}
+            {/*            ease: "linear"*/}
+            {/*        }}*/}
+            {/*        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"*/}
+            {/*    />*/}
+            {/*</div>*/}
 
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <motion.div
@@ -50,10 +51,13 @@ export const Hero = () => {
                     </motion.div>
 
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                        Learn Smarter,
-                        <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Not Harder
-            </span>
+                        <span className="block bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 bg-clip-text text-transparent">
+                            Learn Smarter,
+                        </span>
+                        <span
+                            className="block bg-gradient-to-r from-emerald-300 via-3eal-300 to-cyan-300 bg-clip-text text-transparent">
+                            Not Harder
+                        </span>
                     </h1>
 
                     <p className="text-xl text-gray-400 mb-8 leading-relaxed">
@@ -62,7 +66,8 @@ export const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
+                        <button
+                            className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
                             <Apple size={20} />
                             <div className="text-left">
                                 <div className="text-xs text-gray-300">Download on</div>
@@ -70,7 +75,8 @@ export const Hero = () => {
                             </div>
                         </button>
 
-                        <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
+                        <button
+                            className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition border border-gray-700">
                             <Download size={20} />
                             <div className="text-left">
                                 <div className="text-xs text-gray-300">Get it on</div>
@@ -113,24 +119,14 @@ export const Hero = () => {
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         className="relative z-10"
                     >
-                        <div className="w-full max-w-sm mx-auto aspect-[9/16] bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border-4 border-slate-700 shadow-2xl overflow-hidden">
-                            <div className="h-full flex flex-col items-center justify-center p-8 text-center">
-                                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
-                                    <GraduationCap size={40} className="text-white" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">EzDu App</h3>
-                                <p className="text-gray-400 mb-6">Your pocket learning companion</p>
-                                <div className="w-full space-y-3">
-                                    <div className="bg-slate-700/50 rounded-lg p-3 text-left">
-                                        <div className="text-sm text-gray-400 mb-1">Daily Streak</div>
-                                        <div className="text-emerald-400 font-bold">🔥 15 Days</div>
-                                    </div>
-                                    <div className="bg-slate-700/50 rounded-lg p-3 text-left">
-                                        <div className="text-sm text-gray-400 mb-1">XP Points</div>
-                                        <div className="text-teal-400 font-bold">⚡ 2,450 XP</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="w-full max-w-[390px] md:max-w-[280px] mx-auto">
+                            <Image
+                                src="/ss.png"
+                                alt="EzDu App"
+                                width={390}
+                                height={900}
+                                className="w-full rounded-3xl shadow-2xl"
+                            />
                         </div>
                     </motion.div>
 
@@ -138,18 +134,18 @@ export const Hero = () => {
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                        className="absolute top-10 -left-10 bg-slate-800 border border-emerald-500/30 rounded-xl p-4 shadow-lg"
+                        className="absolute top-6 -left-8 bg-slate-800 border border-emerald-500/30 rounded-xl p-4 shadow-lg"
                     >
-                        <Trophy className="text-emerald-400 mb-2" size={24} />
+                        <Trophy className="text-emerald-400 mb-2" size={20} />
                         <div className="text-sm text-white font-semibold">Top 10%</div>
                     </motion.div>
 
                     <motion.div
                         animate={{ y: [0, 10, 0] }}
                         transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                        className="absolute bottom-10 -right-10 bg-slate-800 border border-teal-500/30 rounded-xl p-4 shadow-lg"
+                        className="absolute bottom-6 -right-8 bg-slate-800 border border-teal-500/30 rounded-xl p-4 shadow-lg"
                     >
-                        <Award className="text-teal-400 mb-2" size={24} />
+                        <Award className="text-teal-400 mb-2" size={20} />
                         <div className="text-sm text-white font-semibold">5 Badges</div>
                     </motion.div>
                 </motion.div>

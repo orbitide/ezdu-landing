@@ -37,7 +37,7 @@ export const EdtechModules = () => {
     ];
 
     return (
-        <section id="modules" className="py-20 bg-slate-900/50">
+        <section id="modules" className="py-20 bg-slate-950/80">
             <div className="container mx-auto px-4" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -47,8 +47,8 @@ export const EdtechModules = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Powerful Learning
                         <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Modules
-            </span>
+                            Modules
+                        </span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                         Comprehensive tools to accelerate your learning journey
