@@ -57,7 +57,7 @@ export const Pricing = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Simple, Transparent
                         <span
-                            className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                            className="block leading-[1.4]  bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
               Pricing
             </span>
                     </h2>

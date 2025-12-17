@@ -1,55 +1,80 @@
 'use client';
 
-
-
 import { Facebook, GraduationCap, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export const Footer = () => {
     const footerLinks = {
-        Features: ['Question Bank', 'Mock Tests', 'Daily Tests', 'Leaderboard'],
-        Support: ['Help Center', 'FAQs', 'Contact Us', 'Community'],
-        Company: ['About Us', 'Careers', 'Blog', 'Press Kit'],
-        Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
+        Features: [
+            { title: 'Question Bank', link: '/question-bank' },
+            { title: 'Mock Tests', link: '/mock-tests' },
+            { title: 'Daily Tests', link: '/daily-tests' },
+            { title: 'Leaderboard', link: '/leaderboard' },
+        ],
+        Support: [
+            { title: 'Help Center', link: '/help' },
+            { title: 'FAQs', link: '/faqs' },
+            { title: 'Contact Us', link: '/contact' },
+            { title: 'Community', link: '/community' },
+        ],
+        Company: [
+            { title: 'About Us', link: '/about' },
+            { title: 'Careers', link: '/career' },
+            { title: 'Blog', link: '/blog' },
+        ],
     };
 
+    const legalLinks = [
+        { title: 'Privacy Policy', link: '/privacy-policy' },
+        { title: 'Terms of Service', link: '/terms' },
+        { title: 'Cookie Policy', link: '/cookies' },
+    ];
+
     return (
-        <footer className="bg-slate-900 border-t border-slate-800 py-12">
-            <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-5 gap-8 mb-8">
-                    <div className="md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
+        <footer className="bg-slate-900 border-t border-slate-800">
+            <div className="container mx-auto px-4 py-12">
+
+                {/* Top Section */}
+                <div className="grid md:grid-cols-4 gap-8 mb-10">
+                    {/* Brand */}
+                    <div>
+                        <div className="flex items-center gap-2 mb-3">
                             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                <GraduationCap className="text-white" size={24} />
+                                <GraduationCap className="text-white" size={22} />
                             </div>
                             <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                EzDu
-              </span>
+                                EzDu
+                            </span>
                         </div>
-                        <p className="text-gray-400 mb-4 leading-relaxed">
-                            Empowering students worldwide with AI-powered learning tools.
-                            Learn smarter, achieve more.
+
+                        <p className="text-gray-400 text-sm mb-4">
+                            AI-powered learning for smarter exam preparation.
                         </p>
+
                         <div className="flex gap-3">
                             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                                 <a
                                     key={i}
                                     href="#"
-                                    className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 text-gray-400 transition-all"
+                                    className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/20 transition"
                                 >
-                                    <Icon size={20} />
+                                    <Icon size={18} />
                                 </a>
                             ))}
                         </div>
                     </div>
 
+                    {/* Links */}
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
-                            <h4 className="font-bold text-white mb-4">{category}</h4>
-                            <ul className="space-y-2">
-                                {links.map((link) => (
-                                    <li key={link}>
-                                        <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                                            {link}
+                            <h4 className="font-semibold text-white mb-3">{category}</h4>
+                            <ul className="space-y-2 text-sm">
+                                {links.map(({ title, link }) => (
+                                    <li key={title}>
+                                        <a
+                                            href={link}
+                                            className="text-gray-400 hover:text-emerald-400 transition-colors"
+                                        >
+                                            {title}
                                         </a>
                                     </li>
                                 ))}
@@ -58,8 +83,22 @@ export const Footer = () => {
                     ))}
                 </div>
 
-                <div className="border-t border-slate-800 pt-8 text-center text-gray-400">
-                    <p>&copy; 2024 EzDu. All rights reserved. Built with ❤️ for learners everywhere.</p>
+                {/* Legal Row */}
+                <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+                    <p>© 2024 EzDu. All rights reserved.</p>
+
+                    <ul className="flex gap-4 flex-wrap justify-center">
+                        {legalLinks.map(({ title, link }) => (
+                            <li key={title}>
+                                <a
+                                    href={link}
+                                    className="hover:text-emerald-400 transition-colors"
+                                >
+                                    {title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </footer>
