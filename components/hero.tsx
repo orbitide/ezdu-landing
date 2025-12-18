@@ -7,32 +7,32 @@ import Image from "next/image";
 export const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            {/*<div className="absolute inset-0 overflow-hidden">*/}
-            {/*    <motion.div*/}
-            {/*        animate={{*/}
-            {/*            scale: [1, 1.2, 1],*/}
-            {/*            rotate: [0, 180, 360],*/}
-            {/*        }}*/}
-            {/*        transition={{*/}
-            {/*            duration: 20,*/}
-            {/*            repeat: Infinity,*/}
-            {/*            ease: "linear"*/}
-            {/*        }}*/}
-            {/*        className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"*/}
-            {/*    />*/}
-            {/*    <motion.div*/}
-            {/*        animate={{*/}
-            {/*            scale: [1, 1.3, 1],*/}
-            {/*            rotate: [360, 180, 0],*/}
-            {/*        }}*/}
-            {/*        transition={{*/}
-            {/*            duration: 15,*/}
-            {/*            repeat: Infinity,*/}
-            {/*            ease: "linear"*/}
-            {/*        }}*/}
-            {/*        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"*/}
-            {/*    />*/}
-            {/*</div>*/}
+            <div className="absolute inset-0 overflow-hidden">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 180, 360],
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        rotate: [360, 180, 0],
+                    }}
+                    transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
+                />
+            </div>
 
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <motion.div

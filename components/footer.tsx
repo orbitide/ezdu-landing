@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, GraduationCap, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 
 export const Footer = () => {
@@ -31,7 +31,7 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="bg-slate-900 border-t border-slate-800">
+        <footer className="bg-slate-950 border-t border-slate-800">
             <div className="container mx-auto px-4 py-12">
 
                 {/* Top Section */}
