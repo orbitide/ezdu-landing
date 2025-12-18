@@ -1,6 +1,7 @@
 'use client';
 
 import { Facebook, GraduationCap, Instagram, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 
 export const Footer = () => {
     const footerLinks = {
@@ -38,11 +39,9 @@ export const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="flex items-center gap-2 mb-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                <GraduationCap className="text-white" size={22} />
-                            </div>
+                            <Image alt="ezdu-logo" src="/logo.png" width={40} height={32}/>
                             <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                                EzDu
+                                ezdu
                             </span>
                         </div>
 
@@ -85,7 +84,7 @@ export const Footer = () => {
 
                 {/* Legal Row */}
                 <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-                    <p>© 2024 EzDu. All rights reserved.</p>
+                    <p>© 2024 ezdu. All rights reserved.</p>
 
                     <ul className="flex gap-4 flex-wrap justify-center">
                         {legalLinks.map(({ title, link }) => (
