@@ -13,21 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Ezdu - Online Learning Platform',
+    title: 'Online Learning Platform',
 
-    description: 'The best platform for online courses, tutorials, and practice exams.',
-
-    // 3. ICONS
-    // icons: {
-    //     icon: '/favicon.ico',
-    // },
-
-    // 4. OPEN GRAPH (For social sharing - Facebook, Twitter, etc.)
+    description: 'The best platform for online courses, tutorials, and practice.',
+    keywords: [
+        'online learning',
+        'courses',
+        'tutorials',
+        'practice exams',
+        'education',
+        'e-learning',
+        'study materials',
+    ],
+    icons: {
+        icon: '/favicon.ico',
+    },
     openGraph: {
-        title: 'Ezdu - Online Learning Platform',
+        title: 'Online Learning Platform',
         description: 'The best platform for online courses, tutorials, and practice exams.',
         url: 'https://ezdu.net',
-        siteName: 'Ezdu',
+        siteName: 'ezdu',
     },
 };
 
