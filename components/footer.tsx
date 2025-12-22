@@ -30,6 +30,14 @@ export const Footer = () => {
         { title: 'Cookie Policy', link: '/cookies' },
     ];
 
+    const socialLinks = [
+        { icon: Facebook, link: 'https://www.facebook.com/profile.php?id=61585174118847' },
+        { icon: Twitter, link: 'https://twitter.com' },
+        { icon: Instagram, link: 'https://www.instagram.com/ezdu.bd/' },
+        { icon: Linkedin, link: 'https://linkedin.com' },
+
+    ];
+
     return (
         <footer className="bg-slate-950 border-t border-slate-800">
             <div className="container mx-auto px-4 py-12">
@@ -50,13 +58,14 @@ export const Footer = () => {
                         </p>
 
                         <div className="flex gap-3">
-                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                            {socialLinks.map((social, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={social.link}
+                                    target={`_blank`}
                                     className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/20 transition"
                                 >
-                                    <Icon size={18} />
+                                    <social.icon size={18} />
                                 </a>
                             ))}
                         </div>
