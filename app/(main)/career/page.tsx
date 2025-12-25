@@ -14,6 +14,7 @@ interface Job {
     level: 'Entry' | 'Mid' | 'Senior' | 'Intern';
     description: string;
     salary?: string;
+    link?: string;
 }
 
 const jobListings: Job[] = [
@@ -96,6 +97,7 @@ const jobListings: Job[] = [
         level: 'Entry',
         salary: '10k – 20k/month',
         description: 'Assist in organizing, entering, and maintaining data accurately for our learning platform.',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfUdzkKnKty4qsjAHM3myppeT7AiW-5WcRUu_xhzsdtAWOHFw/viewform?usp=dialog'
     },
     {
         id: '9',
@@ -379,7 +381,7 @@ export default function CareerPage() {
                                     transition={{duration: 0.6, delay: index * 0.1}}
                                     viewport={{once: true}}
                                 >
-                                    <Link href={`/careers/${job.id}`}>
+                                    <Link href={job.link ?? '#'} target='_blank'>
                                         <div
                                             className="group p-6 bg-gradient-to-r from-neutral-900 to-neutral-950 rounded-2xl border border-neutral-800 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all cursor-pointer">
                                             <div className="flex items-start justify-between mb-4">
