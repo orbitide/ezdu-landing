@@ -27,6 +27,7 @@ const jobListings: Job[] = [
         level: 'Senior',
         salary: '40k – 120k/month',
         description: 'Lead our frontend initiatives using React and Next.js, building scalable and performant web applications.',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf6_TRP5R5QXZw9-v9eladzOosA2lTOFjNoEbeNtDFHrZ844g/viewform?usp=preview'
     },
     {
         id: '2',
