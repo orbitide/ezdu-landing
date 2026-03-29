@@ -210,8 +210,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* Match marketing shell (same as home `surface-page`) */
   body {
-    @apply bg-background text-foreground;
+    @apply min-h-full bg-zinc-950 text-zinc-100;
   }
 
   @media (prefers-reduced-motion: reduce) {

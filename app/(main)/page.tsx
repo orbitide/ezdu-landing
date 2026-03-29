@@ -6,17 +6,14 @@ import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
     return (
-        <div className="min-h-screen surface-page">
-
-
-            <Hero/>
+        <>
+            <Hero />
             <Features />
             <EdtechModules />
             <Pricing />
             <Testimonials />
             {/*<Blog />*/}
             {/*<Contact />*/}
-
-        </div>
+        </>
     );
 }

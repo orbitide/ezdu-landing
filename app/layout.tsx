@@ -65,7 +65,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full bg-zinc-950">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
