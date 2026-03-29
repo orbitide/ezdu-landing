@@ -38,13 +38,11 @@ export const Blog = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Latest from
-                        <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Our Blog
-            </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                        Latest from our{' '}
+                        <span className="text-emerald-400">blog</span>
                     </h2>
-                    <p className="text-xl text-gray-400">
+                    <p className="text-xl text-zinc-400">
                         Tips, insights, and updates to help you learn better
                     </p>
                 </motion.div>
@@ -58,19 +56,19 @@ export const Blog = () => {
                             transition={{ delay: index * 0.15 }}
                         >
                             <Card className="h-full hover:scale-105 transition-transform duration-300 cursor-pointer group">
-                                <div className="aspect-video bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg mb-4 flex items-center justify-center">
+                                <div className="aspect-video rounded-lg mb-4 flex items-center justify-center bg-zinc-800/80 border border-zinc-700">
                                     <BookOpen className="text-emerald-400" size={48} />
                                 </div>
                                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">
+                  <span className="text-xs bg-zinc-800 text-emerald-400 px-3 py-1 rounded-full border border-zinc-700">
                     {post.category}
                   </span>
-                                    <span className="text-xs text-gray-400">{post.date}</span>
+                                    <span className="text-xs text-zinc-500">{post.date}</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
                                     {post.title}
                                 </h3>
-                                <p className="text-gray-400 mb-4 leading-relaxed">
+                                <p className="text-zinc-400 mb-4 leading-relaxed">
                                     {post.excerpt}
                                 </p>
                                 <a href="#" className="text-emerald-400 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">

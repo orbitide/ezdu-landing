@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Target, Heart, Zap, Globe, Sparkles, ArrowRight, Code } from 'lucide-react';
+import { Users, Target, Heart, Zap, Globe, ArrowRight, Code } from 'lucide-react';
 
 const values = [
     {
@@ -87,34 +87,12 @@ const highlights = [
 
 export default function AboutPage() {
     return (
-        <div
-            className="min-h-screen bg-gradient-to-br from-black via-neutral-950 to-black text-gray-100 overflow-hidden">
-            {/* Animated Background Blobs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: 'linear',
-                    }}
-                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        rotate: [360, 180, 0],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: 'linear',
-                    }}
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
-                />
+        <div className="min-h-screen surface-page overflow-hidden">
+            <div
+                className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+                aria-hidden
+            >
+                <div className="absolute top-1/2 left-1/2 h-[min(100vw,640px)] w-[min(100vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/[0.04] blur-3xl" />
             </div>
 
             {/* Hero Section */}
@@ -124,26 +102,29 @@ export default function AboutPage() {
                         initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
                         transition={{delay: 0.2}}
-                        className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-6"
+                        className="badge-live inline-flex items-center gap-2.5 rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 mb-6"
                     >
-                        <Sparkles size={16} className="text-emerald-400"/>
-                        <span className="text-emerald-400 text-sm font-medium">About EzDu</span>
+                        <span className="live-dot" aria-hidden>
+                            <span className="live-dot-inner" />
+                        </span>
+                        <span className="text-zinc-300 text-sm font-medium">About EzDu</span>
                     </motion.div>
 
                     <motion.h1
                         initial={{opacity: 0, y: 30}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white tracking-tight"
                     >
-                        Learning Made Simple in Bangladesh
+                        Learning made simple in{' '}
+                        <span className="text-emerald-400">Bangladesh</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8, delay: 0.2}}
-                        className="text-xl text-gray-400 max-w-3xl mx-auto"
+                        className="text-xl text-zinc-400 max-w-3xl mx-auto"
                     >
                         EzDu is a learning platform that helps students prepare and improve. Thousands of learners
                         across Bangladesh use our tools every day to study more effectively.
@@ -164,14 +145,13 @@ export default function AboutPage() {
                                     whileInView={{opacity: 1, y: 0}}
                                     transition={{duration: 0.6, delay: index * 0.1}}
                                     viewport={{once: true}}
-                                    className="text-center p-6 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20 hover:border-emerald-500/50 transition-all"
+                                    className="text-center p-6 rounded-xl surface-raised surface-raised-hover"
                                 >
                                     <Icon className="w-12 h-12 text-emerald-400 mx-auto mb-4"/>
-                                    <div
-                                        className="text-3xl font-bold bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent mb-2">
+                                    <div className="text-3xl font-bold text-emerald-400 mb-2">
                                         {stat.value}
                                     </div>
-                                    <div className="text-gray-400">{stat.label}</div>
+                                    <div className="text-zinc-500">{stat.label}</div>
                                 </motion.div>
                             );
                         })}
@@ -187,17 +167,17 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="p-8 rounded-3xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20"
+                        className="p-8 rounded-xl surface-raised"
                     >
-                        <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
-                            Our Mission
+                        <h2 className="text-4xl font-bold mb-6 text-white">
+                            Our mission
                         </h2>
-                        <p className="text-lg text-gray-400 leading-relaxed mb-4">
+                        <p className="text-lg text-zinc-400 leading-relaxed mb-4">
                             To revolutionize exam preparation in Bangladesh by providing students with an intelligent,
                             personalized learning platform powered by AI. We believe every student deserves access to
                             quality education and effective learning tools, regardless of their background.
                         </p>
-                        <p className="text-lg text-gray-400 leading-relaxed">
+                        <p className="text-lg text-zinc-400 leading-relaxed">
                             EzDu combines cutting-edge artificial intelligence with deep understanding of the
                             Bangladeshi education system to create a platform that truly works for our students.
                             We&apos;re actively serving thousands of students and continuously improving our platform
@@ -215,9 +195,9 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-4xl font-bold mb-12 text-center text-white"
                     >
-                        What We Offer
+                        What we <span className="text-emerald-400">offer</span>
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -230,11 +210,11 @@ export default function AboutPage() {
                                     whileInView={{opacity: 1, y: 0}}
                                     transition={{duration: 0.6, delay: index * 0.1}}
                                     viewport={{once: true}}
-                                    className="p-8 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20 hover:border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/10"
+                                    className="p-8 rounded-xl surface-raised surface-raised-hover"
                                 >
                                     <Icon className="w-12 h-12 text-emerald-400 mb-4"/>
                                     <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                                    <p className="text-gray-400">{feature.description}</p>
+                                    <p className="text-zinc-400">{feature.description}</p>
                                 </motion.div>
                             );
                         })}
@@ -243,7 +223,7 @@ export default function AboutPage() {
             </section>
 
             {/* Our Story Section */}
-            <section className="relative py-16 px-4 sm:px-6 lg:px-8 z-10 bg-neutral-900/30">
+            <section className="relative py-16 px-4 sm:px-6 lg:px-8 z-10 surface-section-muted">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{opacity: 0, y: 20}}
@@ -251,10 +231,10 @@ export default function AboutPage() {
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
                     >
-                        <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
-                            Our Story
+                        <h2 className="text-4xl font-bold mb-8 text-white">
+                            Our <span className="text-emerald-400">story</span>
                         </h2>
-                        <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+                        <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
                             <p>
                                 EzDu was born from a simple observation: Bangladeshi students were using generic
                                 learning platforms that didn&apos;t understand their unique education system and
@@ -285,9 +265,9 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-4xl font-bold mb-12 text-center text-white"
                     >
-                        Our Core Values
+                        Our core <span className="text-emerald-400">values</span>
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -300,11 +280,11 @@ export default function AboutPage() {
                                     whileInView={{opacity: 1, y: 0}}
                                     transition={{duration: 0.6, delay: index * 0.1}}
                                     viewport={{once: true}}
-                                    className="p-8 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20 hover:border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/10"
+                                    className="p-8 rounded-xl surface-raised surface-raised-hover"
                                 >
                                     <Icon className="w-12 h-12 text-emerald-400 mb-4"/>
                                     <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                                    <p className="text-gray-400">{value.description}</p>
+                                    <p className="text-zinc-400">{value.description}</p>
                                 </motion.div>
                             );
                         })}
@@ -320,9 +300,9 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-4xl font-bold mb-12 text-center text-white"
                     >
-                        Our Team
+                        Our <span className="text-emerald-400">team</span>
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -333,15 +313,14 @@ export default function AboutPage() {
                                 whileInView={{opacity: 1, y: 0}}
                                 transition={{duration: 0.6, delay: index * 0.1}}
                                 viewport={{once: true}}
-                                className="p-6 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20 hover:border-emerald-500/50 transition-all text-center"
+                                className="p-6 rounded-xl surface-raised surface-raised-hover text-center"
                             >
-                                <div
-                                    className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 mx-auto mb-4 flex items-center justify-center">
+                                <div className="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 mx-auto mb-4 flex items-center justify-center">
                                     <Code className="w-8 h-8 text-emerald-400"/>
                                 </div>
                                 <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
                                 <div className="text-emerald-400 font-medium text-sm mb-3">{member.role}</div>
-                                <p className="text-gray-400 text-sm">{member.description}</p>
+                                <p className="text-zinc-400 text-sm">{member.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -356,10 +335,10 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="p-8 rounded-3xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/30"
+                        className="p-8 rounded-xl surface-raised border-emerald-600/20"
                     >
-                        <h2 className="text-3xl font-bold text-white mb-6">Our Commitment to Bangladesh</h2>
-                        <div className="space-y-4 text-gray-400">
+                        <h2 className="text-3xl font-bold text-white mb-6">Our commitment to Bangladesh</h2>
+                        <div className="space-y-4 text-zinc-400">
                             <p>
                                 We&apos;re deeply committed to serving the Bangladeshi education market. Our platform is
                                 designed with a thorough understanding of the local education system, curriculum
@@ -383,10 +362,10 @@ export default function AboutPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-center p-12 rounded-3xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/30 hover:border-emerald-500/60 transition-all"
+                        className="text-center p-12 rounded-xl surface-raised border-emerald-600/20"
                     >
-                        <h2 className="text-3xl font-bold text-white mb-4">Join Thousands of Students</h2>
-                        <p className="text-lg text-gray-400 mb-8">
+                        <h2 className="text-3xl font-bold text-white mb-4">Join thousands of students</h2>
+                        <p className="text-lg text-zinc-400 mb-8">
                             Experience smarter learning. Download EzDu today and transform how you prepare for exams.
                         </p>
                         <div className="flex gap-4 justify-center flex-wrap">

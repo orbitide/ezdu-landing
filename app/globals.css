@@ -112,11 +112,116 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes live-soft-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  70% {
+    transform: scale(2.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.25);
+    opacity: 0;
+  }
+}
+
+@keyframes badge-live-shimmer {
+  0%,
+  100% {
+    border-color: rgb(63 63 70);
+    box-shadow: 0 0 0 0 rgb(16 185 129 / 0);
+  }
+  50% {
+    border-color: rgb(82 82 91);
+    box-shadow: 0 0 20px -8px rgb(16 185 129 / 0.2);
+  }
+}
+
+@keyframes ribbon-emerald-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 10px 25px -10px rgb(5 150 105 / 0.45),
+      0 0 0 0 rgb(16 185 129 / 0);
+  }
+  50% {
+    box-shadow:
+      0 12px 32px -8px rgb(16 185 129 / 0.55),
+      0 0 0 1px rgb(52 211 153 / 0.25);
+  }
+}
+
+@layer utilities {
+  /* Live indicator — dot + soft ring (respect reduced motion below) */
+  .live-dot {
+    @apply relative flex h-2 w-2 shrink-0 items-center justify-center;
+  }
+  .live-dot::before {
+    content: "";
+    @apply absolute inline-flex h-full w-full rounded-full bg-emerald-500/40;
+    animation: live-soft-ping 2.25s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  .live-dot-inner {
+    @apply relative z-[1] h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-zinc-950;
+  }
+
+  .live-dot.live-dot-sm {
+    @apply h-1.5 w-1.5;
+  }
+  .live-dot.live-dot-sm .live-dot-inner {
+    @apply h-1.5 w-1.5 ring-1;
+  }
+
+  /* On solid emerald surfaces (e.g. pricing ribbon) */
+  .live-dot.live-dot-on-light .live-dot-inner {
+    @apply ring-emerald-700;
+  }
+
+  /* Pill / badge with gentle “active” glow */
+  .badge-live {
+    animation: badge-live-shimmer 3.5s ease-in-out infinite;
+  }
+
+  .ribbon-live {
+    animation: ribbon-emerald-pulse 2.5s ease-in-out infinite;
+  }
+
+  /* Landing dark theme — flat surfaces, minimal gradient */
+  .surface-page {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+  .surface-section-muted {
+    @apply bg-zinc-900/40;
+  }
+  .surface-raised {
+    @apply rounded-xl border border-zinc-800 bg-zinc-900/70;
+  }
+  .surface-raised-hover {
+    @apply transition-colors hover:border-zinc-700;
+  }
+  .surface-chrome {
+    @apply border-zinc-800 bg-zinc-950/90 backdrop-blur-lg;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot::before,
+    .badge-live,
+    .ribbon-live {
+      animation: none !important;
+    }
+    .live-dot::before {
+      opacity: 0;
+    }
   }
 }

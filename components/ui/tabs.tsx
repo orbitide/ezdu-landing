@@ -15,7 +15,7 @@ function Tabs({tabs, activeTab, setActiveTab, className}: CustomTabsProps) {
     return (
         <div
             className={cn(
-                "flex gap-2 bg-slate-800/50 p-1 rounded-lg border border-slate-700",
+                "flex gap-2 bg-zinc-900/80 p-1 rounded-lg border border-zinc-800",
                 className
             )}
         >
@@ -26,8 +26,8 @@ function Tabs({tabs, activeTab, setActiveTab, className}: CustomTabsProps) {
                     className={cn(
                         "flex-1 px-6 py-2 rounded-md font-medium transition-all",
                         activeTab === tab
-                            ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
-                            : "text-gray-400 hover:text-white"
+                            ? "bg-emerald-600 text-white"
+                            : "text-zinc-400 hover:text-zinc-100"
                     )}
                 >
                     {tab}

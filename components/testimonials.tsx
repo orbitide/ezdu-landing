@@ -34,18 +34,16 @@ export const Testimonials = () => {
     ];
 
     return (
-        <section className="py-20 bg-slate-900/50">
+        <section id="testimonials" className="py-20 surface-section-muted">
             <div className="container mx-auto px-4" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Loved by Students
-                        <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Worldwide
-            </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                        Loved by students{' '}
+                        <span className="text-emerald-400">worldwide</span>
                     </h2>
                 </motion.div>
 
@@ -62,7 +60,7 @@ export const Testimonials = () => {
                                     <div className="text-4xl">{testimonial.avatar}</div>
                                     <div>
                                         <h4 className="font-bold text-white">{testimonial.name}</h4>
-                                        <p className="text-sm text-gray-400">{testimonial.role}</p>
+                                        <p className="text-sm text-zinc-500">{testimonial.role}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-1 mb-4">
@@ -70,7 +68,7 @@ export const Testimonials = () => {
                                         <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
                                     ))}
                                 </div>
-                                <p className="text-gray-300 leading-relaxed">{testimonial.text}</p>
+                                <p className="text-zinc-300 leading-relaxed">{testimonial.text}</p>
                             </Card>
                         </motion.div>
                     ))}

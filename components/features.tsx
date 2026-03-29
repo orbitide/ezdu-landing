@@ -29,13 +29,11 @@ export const Features = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Everything You Need to
-                        <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Excel in Your Studies
-            </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                        Everything you need to{' '}
+                        <span className="text-emerald-400">excel in your studies</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
                         Powerful features designed to make learning effective, engaging, and fun
                     </p>
                 </motion.div>
@@ -48,17 +46,17 @@ export const Features = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <Card className="h-full hover:shadow-lg hover:shadow-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300 group cursor-pointer">
+                            <Card className="h-full surface-raised-hover transition-colors duration-300 group cursor-pointer">
                                 <motion.div
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
-                                    className="w-14 h-14 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:from-emerald-500/30 group-hover:to-teal-500/30 transition-all"
+                                    whileHover={{ scale: 1.05 }}
+                                    className="w-14 h-14 rounded-xl bg-zinc-800/80 border border-zinc-700 flex items-center justify-center mb-4 transition-colors group-hover:border-emerald-600/40"
                                 >
                                     <feature.icon className="text-emerald-400" size={28} />
                                 </motion.div>
                                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
                                     {feature.title}
                                 </h3>
-                                <p className="text-gray-400 leading-relaxed">
+                                <p className="text-zinc-400 leading-relaxed">
                                     {feature.description}
                                 </p>
                             </Card>

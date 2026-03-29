@@ -20,20 +20,18 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-slate-900/50">
+        <section id="contact" className="py-20 surface-section-muted">
             <div className="container mx-auto px-4" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Get in
-                        <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Touch
-            </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                        Get in{' '}
+                        <span className="text-emerald-400">touch</span>
                     </h2>
-                    <p className="text-xl text-gray-400">
+                    <p className="text-xl text-zinc-400">
                         Have questions? We&apos;d love to hear from you
                     </p>
                 </motion.div>
@@ -47,7 +45,7 @@ export const Contact = () => {
                             <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
-                                    <label className="block text-gray-300 mb-2">Name</label>
+                                    <label className="block text-zinc-300 mb-2">Name</label>
                                     <Input
                                         type="text"
                                         placeholder="Your name"
@@ -57,7 +55,7 @@ export const Contact = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 mb-2">Email</label>
+                                    <label className="block text-zinc-300 mb-2">Email</label>
                                     <Input
                                         type="email"
                                         placeholder="your@email.com"
@@ -67,7 +65,7 @@ export const Contact = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 mb-2">Message</label>
+                                    <label className="block text-zinc-300 mb-2">Message</label>
                                     <Textarea
                                         placeholder="How can we help you?"
                                         rows={5}
@@ -91,48 +89,48 @@ export const Contact = () => {
                     >
                         <Card>
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-zinc-800 border border-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Mail className="text-emerald-400" size={24} />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white mb-1">Email</h4>
-                                    <p className="text-gray-400">support@ezdu.com</p>
+                                    <p className="text-zinc-400">support@ezdu.com</p>
                                 </div>
                             </div>
                         </Card>
 
                         <Card>
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Phone className="text-teal-400" size={24} />
+                                <div className="w-12 h-12 bg-zinc-800 border border-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <Phone className="text-emerald-400" size={24} />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white mb-1">Phone</h4>
-                                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                                    <p className="text-zinc-400">+880 1234 567890</p>
                                 </div>
                             </div>
                         </Card>
 
                         <Card>
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <MapPin className="text-cyan-400" size={24} />
+                                <div className="w-12 h-12 bg-zinc-800 border border-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <MapPin className="text-emerald-400" size={24} />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white mb-1">Location</h4>
-                                    <p className="text-gray-400">San Francisco, CA 94102</p>
+                                    <p className="text-zinc-400">Dhaka, Bangladesh</p>
                                 </div>
                             </div>
                         </Card>
 
-                        <Card className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border-emerald-500/30">
-                            <h4 className="font-bold text-white mb-3">Follow Us</h4>
+                        <Card className="border-emerald-600/25 bg-zinc-900/50">
+                            <h4 className="font-bold text-white mb-3">Follow us</h4>
                             <div className="flex gap-3">
                                 {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                                     <a
                                         key={i}
                                         href="#"
-                                        className="w-10 h-10 bg-slate-800/50 rounded-lg flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 text-gray-400 transition-all"
+                                        className="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-center hover:border-emerald-600/40 hover:text-emerald-400 text-zinc-500 transition-all"
                                     >
                                         <Icon size={20} />
                                     </a>

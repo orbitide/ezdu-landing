@@ -184,34 +184,12 @@ export default function CareerPage() {
     };
 
     return (
-        <main
-            className="min-h-screen bg-gradient-to-br from-black via-neutral-950 to-black text-gray-100 overflow-hidden">
-            {/* Animated Background Blobs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: 'linear',
-                    }}
-                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        rotate: [360, 180, 0],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: 'linear',
-                    }}
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
-                />
+        <main className="min-h-screen surface-page overflow-hidden">
+            <div
+                className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+                aria-hidden
+            >
+                <div className="absolute top-1/2 left-1/2 h-[min(100vw,640px)] w-[min(100vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/[0.04] blur-3xl" />
             </div>
 
             {/* Hero Section */}
@@ -221,16 +199,16 @@ export default function CareerPage() {
                         initial={{opacity: 0, y: 30}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white tracking-tight"
                     >
-                        Join Our Team
+                        Join our <span className="text-emerald-400">team</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8, delay: 0.2}}
-                        className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8"
+                        className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto mb-8"
                     >
                         At ezdu, we’re rethinking how people grow and achieve. If you enjoy creating meaningful products
                         that solve real challenges, you’ll find your place here.
@@ -264,9 +242,9 @@ export default function CareerPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-3xl font-bold mb-12 text-center text-white"
                     >
-                        Why Join Us?
+                        Why join <span className="text-emerald-400">us</span>?
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -279,13 +257,13 @@ export default function CareerPage() {
                                     whileInView={{opacity: 1, y: 0}}
                                     transition={{duration: 0.8, delay: index * 0.2}}
                                     viewport={{once: true}}
-                                    className="p-8 rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-emerald-500/20 hover:border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/10"
+                                    className="p-8 rounded-xl surface-raised surface-raised-hover"
                                 >
                                     <Icon className="w-12 h-12 text-emerald-400 mb-4"/>
                                     <h3 className="text-xl font-semibold text-white mb-3">
                                         {benefit.title}
                                     </h3>
-                                    <p className="text-gray-400">
+                                    <p className="text-zinc-400">
                                         {benefit.description}
                                     </p>
                                 </motion.div>
@@ -303,9 +281,9 @@ export default function CareerPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-3xl font-bold mb-8 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent"
+                        className="text-3xl font-bold mb-8 text-white"
                     >
-                        Open Positions
+                        Open <span className="text-emerald-400">positions</span>
                     </motion.h2>
 
                     {/* Filters */}
@@ -323,7 +301,7 @@ export default function CareerPage() {
                                 className={`px-4 py-2 rounded-lg font-medium transition-all cursor-pointer ${
                                     selectedDepartment === null
                                         ? 'bg-emerald-600 text-white border border-emerald-500'
-                                        : 'bg-neutral-900 text-gray-300 border border-neutral-700 hover:border-emerald-500/50'
+                                        : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600'
                                 }`}
                             >
                                 All Departments
@@ -335,7 +313,7 @@ export default function CareerPage() {
                                     className={`px-4 py-2 rounded-lg font-medium transition-all cursor-pointer ${
                                         selectedDepartment === dept
                                             ? 'bg-emerald-600 text-white border border-emerald-500'
-                                            : 'bg-neutral-900 text-gray-300 border border-neutral-700 hover:border-emerald-500/50'
+                                            : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600'
                                     }`}
                                 >
                                     {dept}
@@ -350,7 +328,7 @@ export default function CareerPage() {
                                 className={`px-4 py-2 rounded-lg font-medium transition-all cursor-pointer ${
                                     selectedLevel === null
                                         ? 'bg-emerald-600 text-white border border-emerald-500'
-                                        : 'bg-neutral-900 text-gray-300 border border-neutral-700 hover:border-emerald-500/50'
+                                        : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600'
                                 }`}
                             >
                                 All Levels
@@ -362,7 +340,7 @@ export default function CareerPage() {
                                     className={`px-4 py-2 rounded-lg font-medium transition-all cursor-pointer ${
                                         selectedLevel === level
                                             ? 'bg-emerald-600 text-white border border-emerald-500'
-                                            : 'bg-neutral-900 text-gray-300 border border-neutral-700 hover:border-emerald-500/50'
+                                            : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600'
                                     }`}
                                 >
                                     {level}
@@ -384,7 +362,7 @@ export default function CareerPage() {
                                 >
                                     <Link href={job.link ?? '#'} target='_blank'>
                                         <div
-                                            className="group p-6 bg-gradient-to-r from-neutral-900 to-neutral-950 rounded-2xl border border-neutral-800 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all cursor-pointer">
+                                            className="group p-6 surface-raised surface-raised-hover cursor-pointer">
                                             <div className="flex items-start justify-between mb-4">
                                                 <div className="flex-1">
                                                     <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors">
@@ -397,20 +375,20 @@ export default function CareerPage() {
                                                             {job.type}
                                                         </span>
                                                         <span
-                                                            className="inline-flex items-center gap-1 px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-sm font-medium border border-teal-500/30">
+                                                            className="inline-flex items-center gap-1 px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-sm font-medium border border-zinc-700">
                                                             {job.level}
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <ChevronRight
-                                                    className="w-6 h-6 text-gray-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"/>
+                                                    className="w-6 h-6 text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"/>
                                             </div>
 
-                                            <p className="text-gray-400 mb-4">
+                                            <p className="text-zinc-400 mb-4">
                                                 {job.description}
                                             </p>
 
-                                            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                                            <div className="flex flex-wrap gap-4 text-sm text-zinc-500">
                                                 <div className="flex items-center gap-2">
                                                     <MapPin className="w-4 h-4 text-emerald-400"/>
                                                     {job.location}
@@ -434,7 +412,7 @@ export default function CareerPage() {
                                 animate={{opacity: 1}}
                                 className="text-center py-12"
                             >
-                                <p className="text-lg text-gray-500">
+                                <p className="text-lg text-zinc-500">
                                     No positions match your filters. Please try adjusting your selection.
                                 </p>
                             </motion.div>
@@ -451,12 +429,12 @@ export default function CareerPage() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="text-center p-12 rounded-3xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/30 hover:border-emerald-500/60 transition-all"
+                        className="text-center p-12 rounded-xl surface-raised border-emerald-600/20"
                     >
                         <h2 className="text-3xl font-bold text-white mb-4">
                             Don&apos;t see the right position?
                         </h2>
-                        <p className="text-lg text-gray-400 mb-6">
+                        <p className="text-lg text-zinc-400 mb-6">
                             Send us your resume and let us know how you&apos;d like to contribute to our team.
                         </p>
                         <button

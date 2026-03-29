@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Online Learning Platform',
+    title: 'EzDu — Pocket Learning Companion',
 
-    description: 'The best platform for learn and practice.',
+    description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
     keywords: [
         'practice exams',
         'study materials',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
         icon: '/favicon.ico',
     },
     openGraph: {
-        title: 'Pocket Learning Companion',
-        description: 'The best platform for learn and practice.',
+        title: 'EzDu — Pocket Learning Companion',
+        description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
         url: 'https://ezdu.net',
         siteName: 'ezdu',
         images: [
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     },
     twitter:{
         card: 'summary_large_image',
-        title: 'Pocket Learning Companion',
-        description: 'The best platform for learn and practice.',
+        title: 'EzDu — Pocket Learning Companion',
+        description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
         images: ['https://ezdu.net/logo.png'],
     },
     metadataBase: new URL('https://ezdu.net'),
