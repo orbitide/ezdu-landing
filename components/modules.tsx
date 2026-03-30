@@ -9,25 +9,26 @@ export const EdtechModules = () => {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
 
+
     const modules = [
         {
-            title: 'Structured Lessons',
-            description: 'Follow carefully crafted learning paths from beginner to expert',
+            title: 'গোছানো লেসন',
+            description: 'বিগিনার থেকে এক্সপার্ট পর্যন্ত সাজানো লার্নিং পাথ অনুসরণ করো',
             icon: BookOpen,
         },
         {
-            title: 'Practice Mode',
-            description: 'Unlimited practice with adaptive difficulty based on your performance',
+            title: 'প্র্যাকটিস মোড',
+            description: 'তোমার পারফরম্যান্স অনুযায়ী কাস্টমাইজড প্র্যাকটিস, যতক্ষণ খুশি',
             icon: Target,
         },
         {
-            title: 'Streak System',
-            description: 'Build consistent study habits with daily streaks and rewards',
+            title: 'স্ট্রিক সিস্টেম',
+            description: 'ডেইলি স্ট্রিক আর রিওয়ার্ড দিয়ে পড়ার অভ্যাস গড়ে তোলো',
             icon: TrendingUp,
         },
         {
-            title: 'XP Rewards',
-            description: 'Earn experience points and unlock achievements as you progress',
+            title: 'এক্সপি রিওয়ার্ড',
+            description: 'এগিয়ে যাও, পয়েন্ট আয় করো, আনলক করো নতুন অ্যাচিভমেন্ট',
             icon: Zap,
         },
     ];
@@ -40,12 +41,12 @@ export const EdtechModules = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Powerful learning{' '}
-                        <span className="text-emerald-400">modules</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        কার্যকর লার্নিং {' '}
+                        <span className="text-emerald-400">মডিউলস</span>
                     </h2>
-                    <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-                        Comprehensive tools to accelerate your learning journey
+                    <p className="text-zinc-400 max-w-2xl mx-auto">
+                        শেখার গতি বাড়াতে সব কিছু এক জায়গায়
                     </p>
                 </motion.div>
 

@@ -41,9 +41,9 @@ export const Testimonials = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Loved by students{' '}
-                        <span className="text-emerald-400">worldwide</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        হাজারো শিক্ষার্থীর{' '}
+                        <span className="text-emerald-400">বিশ্বস্ত সঙ্গী</span>
                     </h2>
                 </motion.div>
 

@@ -8,7 +8,7 @@ export const Hero = () => {
     const reduceMotion = useReducedMotion();
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            <div className="container mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto xl:w-7xl px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -34,7 +34,7 @@ export const Hero = () => {
 
 
                     <p className=" text-zinc-400 mb-8 leading-relaxed max-w-xl">
-                        পার্সোনালাইজড প্র্যাকটিস আর রিয়েল-টাইম প্রোগ্রেস দিয়ে EzDu তোমার লক্ষ্যে পৌঁছানো সহজ করে দেয়।.
+                        পার্সোনালাইজড প্র্যাকটিস আর রিয়েল-টাইম প্রোগ্রেস দিয়ে EzDu তোমার লক্ষ্যে পৌঁছানো সহজ করে দেয় . . .
                     </p>
 
                     <div className="flex flex-wrap gap-4">
@@ -86,13 +86,13 @@ export const Hero = () => {
                         animate={
                             reduceMotion
                                 ? { y: 0 }
-                                : { y: [0, -4, 0] }
+                                : { y: [0, -12, 0],scale: [1, 1.02, 1] }
                         }
                         transition={
                             reduceMotion
                                 ? { duration: 0 }
                                 : {
-                                      duration: 5,
+                                      duration: 3,
                                       repeat: Infinity,
                                       ease: "easeInOut",
                                   }
@@ -132,16 +132,17 @@ export const Hero = () => {
                         animate={
                             reduceMotion
                                 ? { y: 0 }
-                                : { y: [0, 4, 0] }
+                                : { y: [0, 12, 0],
+                                    scale: [1, 0.98, 1] }
                         }
                         transition={
                             reduceMotion
                                 ? { duration: 0 }
                                 : {
-                                      duration: 5.5,
+                                      duration: 3.2,
                                       repeat: Infinity,
                                       ease: "easeInOut",
-                                      delay: 0.9,
+                                      delay: 0.6,
                                   }
                         }
                     >

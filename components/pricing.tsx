@@ -11,39 +11,47 @@ import { Check } from "lucide-react";
 export const Pricing = () => {
     const ref = React.useRef(null);
     const isInView = useInView(ref, {once: true});
-    const [activeTab, setActiveTab] = useState('Monthly');
+    const [activeTab, setActiveTab] = useState('মাসিক');
+
 
     const plans = {
         free: {
-            name: 'Free',
-            price: '৳0',
-            description: 'Perfect for getting started',
+            name: 'ফ্রি',
+            price: '৳০',
+            subPrice:null,
+            description: 'শুরু করতে যা দরকার',
             features: [
-                '100 questions per day',
-                'Basic explanations',
-                'Daily tests',
-                'Community support',
-                'Basic progress tracking'
+                'প্রতিদিন ১০০টি প্রশ্ন',
+                'বেসিক ব্যাখ্যা',
+                'ডেইলি টেস্ট',
+                'কমিউনিটি সাপোর্ট',
+                'বেসিক প্রোগ্রেস ট্র্যাকিং'
             ],
             popular: false,
-            period: activeTab === 'Monthly' ? '/month' : '/year',
+            period: activeTab === 'মাসিক' ? '/মাস' : '/বছর',
+            savings: null,
         },
         premium: {
-            name: 'Premium',
-            price: activeTab === 'Monthly' ? '৳9.99' : '৳79.99',
-            period: activeTab === 'Monthly' ? '/month' : '/year',
-            description: 'Unlock your full potential',
+            name: 'প্রিমিয়াম',
+            price: activeTab === 'মাসিক' ? '৳১৬০' : '৳১০৫০',
+            period: activeTab === 'মাসিক' ? '/মাস' : '/বছর',
+            subPrice: activeTab === 'মাসিক' ? null : {
+                original: '৳১৬০',
+                discounted: '৳৮৮',
+            },
+            description: 'তোমার পুরো সম্ভাবনা আনলক করো',
             features: [
-                'Unlimited questions',
-                'AI-powered explanations',
-                'All test types',
-                'Priority support',
-                'Advanced analytics',
-                'Offline mode',
-                'Ad-free experience',
-                'Early access to new features'
+                'আনলিমিটেড প্রশ্ন',
+                'বিস্তারিত ব্যাখ্যা',
+                'সব ধরনের টেস্ট',
+                'প্রায়োরিটি সাপোর্ট',
+                'অ্যাডভান্সড অ্যানালিটিক্স',
+                'অফলাইন মোড',
+                'বিজ্ঞাপনমুক্ত অভিজ্ঞতা',
+                'নতুন ফিচারে আর্লি অ্যাক্সেস'
             ],
-            popular: true
+            popular: true,
+            savings: activeTab === 'মাসিক' ? null : { badge: '৪৫% ছাড়' }
         }
     };
 
@@ -54,16 +62,18 @@ export const Pricing = () => {
                     initial={{opacity: 0, y: 30}}
                     animate={isInView ? {opacity: 1, y: 0} : {}}
                     className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Simple, transparent{' '}
-                        <span className="text-emerald-400">pricing</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        শেখা সবার জন্য,{' '}
+                        <span className="text-emerald-400">ফ্রিতেই শুরু করো</span>
                     </h2>
-                    <p className="text-xl text-zinc-400 mb-8">
-                        Choose the plan that works best for you
+                    <p className=" text-zinc-400 mb-8">
+                        প্র্যাকটিস ও লেসন সবসময়{' '}
+                        <span className="text-white font-semibold">বিনামূল্যে।</span>
+                        {' '}প্রিমিয়াম নাও যখন আরো বেশি চাও
                     </p>
 
                     <div className="flex justify-center mb-12">
-                        <Tabs tabs={['Monthly', 'Yearly']} activeTab={activeTab} setActiveTab={setActiveTab}/>
+                        <Tabs tabs={['মাসিক', 'বার্ষিক']} activeTab={activeTab} setActiveTab={setActiveTab}/>
                     </div>
                 </motion.div>
 
@@ -77,25 +87,35 @@ export const Pricing = () => {
                         >
                             <Card
                                 className={`h-full relative ${plan.popular ? 'border-emerald-600/50 ring-1 ring-emerald-600/30' : ''}`}>
-                                {plan.popular && (
-                                    <div
-                                        className="ribbon-live absolute -top-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30">
-                                        <span className="live-dot live-dot-sm live-dot-on-light" aria-hidden>
-                                            <span className="live-dot-inner" />
-                                        </span>
-                                        Most popular
+
+                                {/* Most Popular Badge — shows savings % when yearly */}
+                                {plan.period == '/বছর' && plan.popular && (
+                                    <div className="ribbon-live absolute -top-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30">
+                                <span className="live-dot live-dot-sm live-dot-on-light" aria-hidden>
+                                    <span className="live-dot-inner"/>
+                                </span>
+                                        {plan.savings?.badge}
                                     </div>
                                 )}
 
                                 <div className="text-center mb-6">
                                     <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                                     <p className="text-zinc-400 mb-4">{plan.description}</p>
-                                    <div className="flex items-baseline justify-center gap-1">
+
+                                    {/* Price */}
+                                    <div className="flex items-baseline justify-center gap-2">
                                         <span className="text-5xl font-bold text-white">{plan.price}</span>
-                                        {plan.period && <span className="text-zinc-500">{plan.period}</span>}
+                                        {plan.period && (
+                                            <span className="text-zinc-500">{plan.period}</span>
+                                        )}
                                     </div>
-                                    {activeTab === 'Yearly' && plan.period && (
-                                        <p className="text-emerald-400 text-sm mt-2">Save 33%</p>
+
+
+                                    {plan.subPrice && (
+                                        <div className="mt-1.5 flex items-center justify-center gap-1.5">
+                                            <span className="text-sm text-zinc-600 line-through">{plan.subPrice.original}/মাস</span>
+                                            <span className="text-sm text-white font-medium">{plan.subPrice.discounted}/মাস</span>
+                                        </div>
                                     )}
                                 </div>
 
@@ -108,9 +128,10 @@ export const Pricing = () => {
                                     ))}
                                 </div>
 
-                                <Button variant={plan.popular ? 'default' : 'outline'}
-                                        className="w-full justify-center">
-                                    {plan.popular ? 'Get Premium' : 'Start Free'}
+                                <Button
+                                    variant={plan.popular ? 'default' : 'outline'}
+                                    className="w-full justify-center">
+                                    {plan.popular ? 'প্রিমিয়াম নাও' : 'ফ্রিতে শুরু করো'}
                                 </Button>
                             </Card>
                         </motion.div>
