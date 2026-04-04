@@ -94,7 +94,7 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white mb-1">Email</h4>
-                                    <p className="text-zinc-400">support@ezdu.com</p>
+                                    <p className="text-zinc-400">hello@ezdu.net</p>
                                 </div>
                             </div>
                         </Card>

@@ -14,7 +14,7 @@ export const Footer = () => {
         ],
         Support: [
             { title: 'Help Center', link: '/contact' },
-            { title: 'FAQs', link: '/contact#faqs' },
+            { title: 'FAQs', link: '/faq' },
             { title: 'Contact Us', link: '/contact' },
             { title: 'Community', link: '/contact' },
         ],
@@ -53,7 +53,7 @@ export const Footer = () => {
                         </Link>
 
                         <p className="text-zinc-500 text-sm mb-4">
-                            AI-powered learning for smarter exam preparation.
+                            Free learning for smarter exam preparation.
                         </p>
 
                         <div className="flex gap-3">

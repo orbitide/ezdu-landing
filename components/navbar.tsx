@@ -28,17 +28,17 @@ export const Navbar = () => {
                     </motion.div>
                 </Link>
 
-                <div className="flex items-center gap-5 sm:gap-8">
-                    <Link href="/about" className={navLinkClass}>
-                        About
-                    </Link>
-                    <Link href="/career" className={navLinkClass}>
-                        Careers
-                    </Link>
-                    <Link href="/contact" className={navLinkClass}>
-                        Contact
-                    </Link>
-                </div>
+                {/*<div className="flex items-center gap-5 sm:gap-8">*/}
+                {/*    <Link href="/about" className={navLinkClass}>*/}
+                {/*        About*/}
+                {/*    </Link>*/}
+                {/*    <Link href="/career" className={navLinkClass}>*/}
+                {/*        Careers*/}
+                {/*    </Link>*/}
+                {/*    <Link href="/contact" className={navLinkClass}>*/}
+                {/*        Contact*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
             </div>
         </motion.nav>
     );

@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
                         <h2 className="text-lg font-semibold text-white mb-3">8. Children&apos;s privacy</h2>
                         <p>
                             EzDu is intended for learners. If you are a parent or guardian and believe a child has
-                            provided us with information without appropriate consent, contact us at support@ezdu.com and
+                            provided us with information without appropriate consent, contact us at hello@ezdu.net and
                             we will take steps to delete it where required by law.
                         </p>
                     </section>
@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
                         <h2 className="text-lg font-semibold text-white mb-3">9. Your rights</h2>
                         <p>
                             Depending on your location, you may have rights to access, correct, delete, or export your
-                            data, or to object to or restrict certain processing. Contact support@ezdu.com to exercise
+                            data, or to object to or restrict certain processing. Contact hello@ezdu.net to exercise
                             these rights. You may also have the right to complain to a data protection authority.
                         </p>
                     </section>
@@ -148,8 +148,8 @@ export default function PrivacyPolicyPage() {
                         <h2 className="text-lg font-semibold text-white mb-3">12. Contact</h2>
                         <p>
                             Questions about this Privacy Policy:{" "}
-                            <a href="mailto:support@ezdu.com" className="text-emerald-400 hover:text-emerald-300">
-                                support@ezdu.com
+                            <a href="mailto:hello@ezdu.net" className="text-emerald-400 hover:text-emerald-300">
+                                hello@ezdu.net
                             </a>
                             <br />
                             Mailing address (example): EzDu, Dhaka, Bangladesh.

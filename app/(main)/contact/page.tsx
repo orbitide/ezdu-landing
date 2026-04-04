@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, ArrowRight, MessageSquare, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 
 const contactInfo = [
     {
         icon: Mail,
         title: 'Email',
-        value: 'support@ezdu.com',
+        value: 'hello@ezdu.net',
         description: 'Reach out anytime for support or inquiries',
     },
     {
@@ -31,32 +31,6 @@ const contactInfo = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'How do I get started with EzDu?',
-        answer: 'Simply download the EzDu app from the Play Store or App Store, create an account, and start practicing with AI-powered questions tailored to your curriculum.',
-    },
-    {
-        question: 'Is EzDu free to use?',
-        answer: 'EzDu offers both free and premium features. You can start with the free version and upgrade anytime for additional benefits.',
-    },
-    {
-        question: 'How does the AI-powered question generation work?',
-        answer: 'Our AI analyzes your curriculum and learning patterns to generate contextual, relevant questions that match your academic level and help you focus on weak areas.',
-    },
-    {
-        question: 'Can I track my progress?',
-        answer: 'Yes! EzDu provides detailed analytics and progress tracking so you can see improvements over time and identify areas that need more focus.',
-    },
-    {
-        question: 'Which subjects and topics does EzDu cover?',
-        answer: "We cover major subjects across different educational levels in Bangladesh, including Mathematics, Science, English, and more. We're constantly expanding our content.",
-    },
-    {
-        question: 'Is my data safe on EzDu?',
-        answer: 'Absolutely. We use industry-standard security measures to protect your personal information and learning data.',
-    },
-];
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -66,7 +40,6 @@ export default function ContactPage() {
         message: '',
     });
     const [submitted, setSubmitted] = useState(false);
-    const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -248,91 +221,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section id="faqs" className="relative py-16 px-4 sm:px-6 lg:px-8 z-10 scroll-mt-24">
-                <div className="max-w-4xl mx-auto">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="text-4xl font-bold mb-12 text-center text-white"
-                    >
-                        Frequently asked{' '}
-                        <span className="text-emerald-400">questions</span>
-                    </motion.h2>
-
-                    <div className="space-y-4">
-                        {faqs.map((faq, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.05 }}
-                                viewport={{ once: true }}
-                                className="rounded-xl surface-raised surface-raised-hover overflow-hidden"
-                            >
-                                <button
-                                    onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                                    className="w-full p-6 flex items-start justify-between gap-4 text-left"
-                                >
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-semibold text-white flex items-center gap-3">
-                                            <MessageSquare className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                                            {faq.question}
-                                        </h3>
-                                    </div>
-                                    <motion.div
-                                        animate={{ rotate: expandedFaq === index ? 180 : 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <ArrowRight className="w-5 h-5 text-emerald-400" />
-                                    </motion.div>
-                                </button>
-
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{
-                                        height: expandedFaq === index ? 'auto' : 0,
-                                        opacity: expandedFaq === index ? 1 : 0,
-                                    }}
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-hidden"
-                                >
-                                    <div className="px-6 pb-6 text-zinc-400 border-t border-zinc-800">
-                                        {faq.answer}
-                                    </div>
-                                </motion.div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="relative py-16 px-4 sm:px-6 lg:px-8 z-10">
-                <div className="max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="text-center p-12 rounded-xl surface-raised border-emerald-600/20"
-                    >
-                        <h2 className="text-3xl font-bold text-white mb-4">Still have questions?</h2>
-                        <p className="text-lg text-zinc-400 mb-8">
-                            Our support team is ready to help. Don&apos;t hesitate to reach out!
-                        </p>
-                        <a
-                            href="mailto:support@ezdu.com"
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold transition-all border border-emerald-500/30 hover:border-emerald-500/60 hover:shadow-lg hover:shadow-emerald-500/20 group"
-                        >
-                            Email Support
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </a>
-                    </motion.div>
-                </div>
-            </section>
         </div>
     );
 }

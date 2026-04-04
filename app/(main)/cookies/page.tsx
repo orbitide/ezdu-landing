@@ -98,8 +98,8 @@ export default function CookiesPage() {
                     <section>
                         <h2 className="text-lg font-semibold text-white mb-3">6. Contact</h2>
                         <p>
-                            <a href="mailto:support@ezdu.com" className="text-emerald-400 hover:text-emerald-300">
-                                support@ezdu.com
+                            <a href="mailto:hello@ezdu.net" className="text-emerald-400 hover:text-emerald-300">
+                                hello@ezdu.net
                             </a>
                         </p>
                     </section>

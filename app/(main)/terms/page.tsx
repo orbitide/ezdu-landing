@@ -33,7 +33,7 @@ export default function TermsPage() {
                         <h2 className="text-lg font-semibold text-white mb-3">3. Accounts</h2>
                         <p>
                             You must provide accurate registration information and keep your credentials confidential.
-                            You are responsible for activity under your account. Notify us immediately at support@ezdu.com
+                            You are responsible for activity under your account. Notify us immediately at hello@ezdu.net
                             if you suspect unauthorized access. We may suspend accounts that violate these Terms or
                             pose a security risk.
                         </p>
@@ -44,7 +44,7 @@ export default function TermsPage() {
                         <p>
                             Some features require payment. Prices, billing cycles, and taxes are shown at checkout.
                             Subscriptions renew automatically until cancelled in accordance with the store or payment
-                            method you used (e.g. Google Play or App Store rules apply to in-app purchases). Refunds,
+                            method you used (e.g. bKash, Google Play or App Store rules apply to in-app purchases). Refunds,
                             if any, follow the policy of the payment provider or applicable law.
                         </p>
                     </section>
@@ -130,8 +130,8 @@ export default function TermsPage() {
                     <section>
                         <h2 className="text-lg font-semibold text-white mb-3">13. Contact</h2>
                         <p>
-                            <a href="mailto:support@ezdu.com" className="text-emerald-400 hover:text-emerald-300">
-                                support@ezdu.com
+                            <a href="mailto:hello@ezdu.net" className="text-emerald-400 hover:text-emerald-300">
+                                hello@ezdu.net
                             </a>
                         </p>
                     </section>
