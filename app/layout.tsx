@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'EzDu — Pocket Learning Companion',
+    title: 'EzDu - Pocket Learning Companion',
 
     description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
     keywords: [
