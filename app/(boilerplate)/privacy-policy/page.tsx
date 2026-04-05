@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { LegalNotice } from "@/components/legal-notice";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("privacy-policy", {
+    title: "Privacy Policy",
+    description:
+        "How EzDu collects, uses, and protects your personal data when you use our website and apps.",
+    keywords: ["EzDu privacy", "data protection", "privacy policy Bangladesh"],
+});
 
 export default function PrivacyPolicyPage() {
     return (
-        <div className="min-h-screen surface-page pt-24 pb-20 px-4">
+        <div className="min-h-screen surface-page px-4 pb-20 pt-ez-below-nav-lg">
             <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-white tracking-tight mb-2">Privacy Policy</h1>
                 <p className="text-sm text-zinc-500 mb-10">

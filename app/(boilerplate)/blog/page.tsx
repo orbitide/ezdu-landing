@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("blog", {
+    title: "Blog",
+    description:
+        "Study tips, exam prep ideas, and EzDu product updates for students and parents in Bangladesh.",
+    keywords: ["EzDu blog", "SSC study tips", "exam preparation Bangladesh"],
+});
 
 const posts = [
     {
@@ -29,7 +38,7 @@ const posts = [
 
 export default function BlogPage() {
     return (
-        <div className="min-h-screen surface-page pt-24 pb-20 px-4">
+        <div className="min-h-screen surface-page px-4 pb-20 pt-ez-below-nav-lg">
             <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-white tracking-tight mb-3">
                     EzDu <span className="text-emerald-400">blog</span>
@@ -41,7 +50,10 @@ export default function BlogPage() {
                 <ul className="space-y-10">
                     {posts.map((post) => (
                         <li key={post.slug}>
-                            <article id={post.slug} className="rounded-xl surface-raised surface-raised-hover p-6 md:p-8 scroll-mt-24">
+                            <article
+                                id={post.slug}
+                                className="scroll-mt-ez-nav rounded-xl surface-raised surface-raised-hover p-6 md:p-8"
+                            >
                                 <div className="flex flex-wrap items-center gap-2 text-sm text-zinc-500 mb-3">
                                     <span className="rounded-full border border-zinc-700 bg-zinc-800/80 px-2.5 py-0.5 text-emerald-400">
                                         {post.category}

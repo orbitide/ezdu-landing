@@ -1,34 +1,33 @@
 'use client';
 
-import { motion, useInView } from "framer-motion";
-import React from "react";
-import { BookOpen, Target, TrendingUp, Zap } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { motion, useInView } from 'framer-motion';
+import React from 'react';
+import { BookOpen, Target, TrendingUp, Zap } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 export const EdtechModules = () => {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
 
-
     const modules = [
         {
             title: 'গোছানো লেসন',
-            description: 'বিগিনার থেকে এক্সপার্ট পর্যন্ত সাজানো লার্নিং পাথ অনুসরণ করো',
+            description: 'বিষয়ভিত্তিক ইউনিট—শুরু থেকে এগিয়ে যাওয়ার ধাপ',
             icon: BookOpen,
         },
         {
             title: 'প্র্যাকটিস মোড',
-            description: 'তোমার পারফরম্যান্স অনুযায়ী কাস্টমাইজড প্র্যাকটিস, যতক্ষণ খুশি',
+            description: 'ফলাফল অনুযায়ী পরের সেট—নিজের গতিতে যতক্ষণ লাগে',
             icon: Target,
         },
         {
             title: 'স্ট্রিক সিস্টেম',
-            description: 'ডেইলি স্ট্রিক আর রিওয়ার্ড দিয়ে পড়ার অভ্যাস গড়ে তোলো',
+            description: 'প্রতিদিন ধারাবাহিকতা দেখানো আর ছোট পুরস্কার',
             icon: TrendingUp,
         },
         {
             title: 'এক্সপি রিওয়ার্ড',
-            description: 'এগিয়ে যাও, পয়েন্ট আয় করো, আনলক করো নতুন অ্যাচিভমেন্ট',
+            description: 'পয়েন্ট জমিয়ে লেভেল ও অ্যাচিভমেন্ট আনলক',
             icon: Zap,
         },
     ];
@@ -42,11 +41,10 @@ export const EdtechModules = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        কার্যকর লার্নিং {' '}
-                        <span className="text-emerald-400">মডিউলস</span>
+                        লার্নিং <span className="text-emerald-400">মডিউলস</span>
                     </h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto">
-                        শেখার গতি বাড়াতে সব কিছু এক জায়গায়
+                        লেসন, প্র্যাকটিস ও অগ্রগতি—একই অ্যাপে কীভাবে জুড়ে দেওয়া হয়েছে
                     </p>
                 </motion.div>
 
@@ -58,9 +56,9 @@ export const EdtechModules = () => {
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: index * 0.15 }}
                         >
-                            <Card className="h-full hover:scale-105 transition-transform duration-300">
+                            <Card className="h-full surface-raised-hover transition-colors duration-300 border-zinc-800/80 hover:border-zinc-600/50">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-lg bg-zinc-800/80 border border-zinc-700 flex items-center justify-center flex-shrink-0">
+                                    <div className="w-12 h-12 rounded-lg bg-zinc-800/80 border border-zinc-700 flex items-center justify-center flex-shrink-0 transition-colors hover:border-emerald-600/35">
                                         <module.icon className="text-emerald-400" size={24} />
                                     </div>
                                     <div>

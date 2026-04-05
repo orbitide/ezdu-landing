@@ -76,6 +76,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* Fixed navbar — logo row height only (safe area is padding on <nav>, see Navbar) */
+  --ez-marketing-nav-height: 3.5rem;
+  --ez-exam-bar-height: 3.5rem;
+  --ez-safe-top: env(safe-area-inset-top, 0px);
+  --ez-chrome-row: calc(var(--ez-safe-top) + var(--ez-marketing-nav-height));
+  --ez-marketing-header-exam: calc(var(--ez-chrome-row) + var(--ez-exam-bar-height));
 }
 
 .dark {
@@ -203,6 +209,18 @@
   }
   .surface-chrome {
     @apply border-zinc-800 bg-zinc-950/90 backdrop-blur-lg;
+  }
+
+  /* Clear fixed navbar + notch (max keeps desktop spacing when safe-area is 0) */
+  .pt-ez-below-nav {
+    padding-top: max(5rem, var(--ez-chrome-row));
+  }
+  .pt-ez-below-nav-lg {
+    padding-top: max(6rem, var(--ez-chrome-row));
+  }
+
+  .scroll-mt-ez-nav {
+    scroll-margin-top: calc(var(--ez-chrome-row) + 1rem);
   }
 }
 

@@ -17,11 +17,6 @@ export function buildMetadata(slug: string, meta: PageMeta): Metadata {
         keywords: meta.keywords,
         alternates: {
             canonical: url,
-            languages: {
-                'bn-BD': `${BASE_URL}/bn/${slug}`,
-                'en-US': `${BASE_URL}/en/${slug}`,
-                'x-default': url,
-            },
         },
         openGraph: {
             title: `${meta.title} — EzDu`,

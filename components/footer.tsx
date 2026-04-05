@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,6 +22,7 @@ export const Footer = () => {
             { title: 'About Us', link: '/about' },
             { title: 'Careers', link: '/career' },
             { title: 'Blog', link: '/blog' },
+            { title: 'Vocabulary', link: '/vocabulary' },
         ],
     };
 
@@ -33,9 +34,7 @@ export const Footer = () => {
 
     const socialLinks = [
         { icon: Facebook, link: 'https://www.facebook.com/profile.php?id=61585174118847', label: 'Facebook' },
-        { icon: Twitter, link: 'https://twitter.com', label: 'Twitter' },
         { icon: Instagram, link: 'https://www.instagram.com/ezdu.bd/', label: 'Instagram' },
-        { icon: Linkedin, link: 'https://linkedin.com', label: 'LinkedIn' },
     ];
 
     const year = new Date().getFullYear();
@@ -46,9 +45,9 @@ export const Footer = () => {
                 <div className="grid md:grid-cols-4 gap-8 mb-10">
                     <div>
                         <Link href="/" className="inline-flex items-center gap-2 mb-3">
-                            <Image alt="ezdu-logo" src="/logo.png" width={40} height={32} />
-                            <span className="text-2xl font-bold text-white tracking-tight lowercase">
-                                ezdu
+                            <Image alt="EzDu logo" src="/logo.png" width={40} height={32} />
+                            <span className="text-2xl font-bold text-white tracking-tight">
+                                EzDu
                             </span>
                         </Link>
 
@@ -92,7 +91,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="border-t border-zinc-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-                    <p>© {year} ezdu. All rights reserved.</p>
+                    <p>© {year} EzDu. All rights reserved.</p>
 
                     <ul className="flex gap-4 flex-wrap justify-center">
                         {legalLinks.map(({ title, link }) => (

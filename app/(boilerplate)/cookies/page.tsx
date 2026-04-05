@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { LegalNotice } from "@/components/legal-notice";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("cookies", {
+    title: "Cookie Policy",
+    description:
+        "EzDu cookie policy: what cookies and similar technologies we use and how you can control them.",
+    keywords: ["EzDu cookies", "cookie policy", "tracking"],
+});
 
 export default function CookiesPage() {
     return (
-        <div className="min-h-screen surface-page pt-24 pb-20 px-4">
+        <div className="min-h-screen surface-page px-4 pb-20 pt-ez-below-nav-lg">
             <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-white tracking-tight mb-2">Cookie Policy</h1>
                 <p className="text-sm text-zinc-500 mb-10">Effective date: March 1, 2026</p>

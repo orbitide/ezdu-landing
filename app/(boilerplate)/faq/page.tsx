@@ -33,7 +33,7 @@ const faqs = [
     },
 ];
 
-export default function ContactPage() {
+export default function FaqPage() {
     const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
 
             {/* Hero Section */}
-            <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 z-10">
+            <section className="relative z-10 px-4 pb-16 pt-ez-below-nav sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,10 @@ export default function ContactPage() {
 
 
             {/* FAQ Section */}
-            <section id="faqs" className="relative py-16 px-4 sm:px-6 lg:px-8 z-10 scroll-mt-24">
+            <section
+                id="faqs"
+                className="relative z-10 scroll-mt-ez-nav px-4 py-16 sm:px-6 lg:px-8"
+            >
                 <div className="max-w-4xl mx-auto">
 
                     <div className="space-y-4">

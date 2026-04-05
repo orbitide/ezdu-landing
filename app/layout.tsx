@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'EzDu - Pocket Learning Companion',
+    title: 'EzDu — Pocket Learning Companion',
 
     description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
     keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         title: 'EzDu — Pocket Learning Companion',
         description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
         url: 'https://ezdu.net',
-        siteName: 'ezdu',
+        siteName: 'EzDu',
         images: [
             {
                 url: 'https://ezdu.net/logo.png',
@@ -58,6 +58,13 @@ export const metadata: Metadata = {
         images: ['https://ezdu.net/logo.png'],
     },
     metadataBase: new URL('https://ezdu.net'),
+};
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
+    themeColor: '#09090b',
 };
 
 export default function RootLayout({

@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { LegalNotice } from "@/components/legal-notice";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("terms", {
+    title: "Terms of Service",
+    description:
+        "Terms of Service for EzDu: rules for using our learning platform, accounts, content, and limitations of liability.",
+    keywords: ["EzDu terms", "terms of service", "user agreement"],
+});
 
 export default function TermsPage() {
     return (
-        <div className="min-h-screen surface-page pt-24 pb-20 px-4">
+        <div className="min-h-screen surface-page px-4 pb-20 pt-ez-below-nav-lg">
             <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold text-white tracking-tight mb-2">Terms of Service</h1>
                 <p className="text-sm text-zinc-500 mb-10">

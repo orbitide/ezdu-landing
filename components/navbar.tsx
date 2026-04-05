@@ -1,45 +1,47 @@
 'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-
-const navLinkClass =
-    "text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors";
+import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ExamHubNav } from '@/components/exam-hub-nav';
+import { isExamPath } from '@/lib/exam-routes';
 
 export const Navbar = () => {
+    const pathname = usePathname();
+    const showExamBar = isExamPath(pathname);
+    const reduceMotion = useReducedMotion();
+
     return (
         <motion.nav
-            initial={{ y: -100 }}
+            initial={reduceMotion ? false : { y: -100 }}
             animate={{ y: 0 }}
             className="fixed top-0 left-0 right-0 z-50 surface-chrome border-b"
+            style={{ paddingTop: 'var(--ez-safe-top)' }}
             aria-label="Main"
         >
-            <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-6">
-                <Link href="/" className="flex items-center shrink-0">
+            <div className="container mx-auto flex h-[var(--ez-marketing-nav-height)] items-center justify-between gap-6 px-4">
+                <Link href="/" className="flex shrink-0 items-center">
                     <motion.div
                         className="flex items-center gap-2"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <Image alt="ezdu-logo" src="/logo.png" width={36} height={32} />
-                        <span className="text-2xl font-bold text-white tracking-tight">
-                            EzDu
-                        </span>
+                        <Image alt="EzDu logo" src="/logo.png" width={36} height={32} />
+                        <span className="text-2xl font-bold tracking-tight text-white">EzDu</span>
                     </motion.div>
                 </Link>
 
-                {/*<div className="flex items-center gap-5 sm:gap-8">*/}
-                {/*    <Link href="/about" className={navLinkClass}>*/}
-                {/*        About*/}
-                {/*    </Link>*/}
-                {/*    <Link href="/career" className={navLinkClass}>*/}
-                {/*        Careers*/}
-                {/*    </Link>*/}
-                {/*    <Link href="/contact" className={navLinkClass}>*/}
-                {/*        Contact*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
+                {/*<div className="flex items-center gap-5 sm:gap-8">
+                    <Link href="/about" className="text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors">About</Link>
+                    <Link href="/career" className="text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors">Careers</Link>
+                    <Link href="/contact" className="text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors">Contact</Link>
+                </div>*/}
             </div>
+            {showExamBar ? (
+                <div className="h-[var(--ez-exam-bar-height)] overflow-hidden border-t border-zinc-800/90 bg-zinc-950/80">
+                    <ExamHubNav />
+                </div>
+            ) : null}
         </motion.nav>
     );
 };

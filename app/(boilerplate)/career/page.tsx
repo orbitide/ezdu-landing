@@ -193,7 +193,7 @@ export default function CareerPage() {
             </div>
 
             {/* Hero Section */}
-            <section className="relative pt-20 pb-12 px-4 sm:px-6 lg:px-8 z-10">
+            <section className="relative z-10 px-4 pb-12 pt-ez-below-nav sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         initial={{opacity: 0, y: 30}}

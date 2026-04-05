@@ -25,14 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url("/hsc",            0.9, "weekly"),
         url("/bcs",            0.9, "weekly"),
         url("/ielts",          0.9, "weekly"),
-        url("/bank-job",       0.8, "weekly"),
-        url("/govt-job",       0.8, "weekly"),
-        url("/class-6",        0.8, "weekly"),
-        url("/class-7",        0.8, "weekly"),
-        url("/class-8",        0.8, "weekly"),
+        url("/vocabulary",     0.85, "weekly"),
 
         // ── Supporting ────────────────────────────────────
         url("/blog",           0.6, "weekly"),
+        url("/faq",            0.55, "monthly"),
         url("/about",          0.5, "yearly"),
         url("/career",         0.5, "monthly"),
         url("/contact",        0.4, "monthly"),

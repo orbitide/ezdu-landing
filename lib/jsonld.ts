@@ -1,39 +1,53 @@
+import { googlePlayListingUrl } from '@/lib/google-play';
+
+const SITE = 'https://ezdu.net';
+
 export function getRootJsonLd() {
+    const playUrl = googlePlayListingUrl();
+
+    const mobileApp: Record<string, unknown> = {
+        '@type': 'MobileApplication',
+        '@id': `${SITE}/#mobile-app`,
+        name: 'EzDu',
+        description: 'SSC, HSC, BCS, IELTS পরীক্ষার MCQ প্র্যাকটিস ও mock test অ্যাপ',
+        applicationCategory: 'EducationApplication',
+        operatingSystem: 'Android, iOS',
+        url: SITE,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'BDT' },
+    };
+    if (playUrl) {
+        mobileApp.downloadUrl = playUrl;
+    }
+
+    const sameAs = [
+        'https://www.facebook.com/profile.php?id=61585174118847',
+        'https://www.instagram.com/ezdu.bd/',
+    ];
+    if (playUrl) {
+        sameAs.push(playUrl);
+    }
+
     return {
         '@context': 'https://schema.org',
         '@graph': [
-            {
-                '@type': 'MobileApplication',
-                '@id': 'https://ezdu.net/#mobile-app',
-                name: 'EzDu',
-                description: 'SSC, HSC, BCS, IELTS পরীক্ষার MCQ প্র্যাকটিস ও mock test অ্যাপ',
-                applicationCategory: 'EducationApplication',
-                operatingSystem: 'Android, iOS',
-                url: 'https://ezdu.net',
-                downloadUrl: 'https://play.google.com/store/apps/details?id=your.app.id',
-                offers: { '@type': 'Offer', price: '0', priceCurrency: 'BDT' },
-            },
+            mobileApp,
             {
                 '@type': 'WebApplication',
-                '@id': 'https://ezdu.net/#web-app',
+                '@id': `${SITE}/#web-app`,
                 name: 'EzDu Web',
                 description: 'SSC, HSC, BCS, IELTS পরীক্ষার MCQ প্র্যাকটিস ও mock test — ব্রাউজারেই করো',
                 applicationCategory: 'EducationApplication',
                 browserRequirements: 'Requires JavaScript',
-                url: 'https://ezdu.net',
+                url: SITE,
                 offers: { '@type': 'Offer', price: '0', priceCurrency: 'BDT' },
             },
             {
                 '@type': 'Organization',
-                '@id': 'https://ezdu.net/#organization',
+                '@id': `${SITE}/#organization`,
                 name: 'EzDu',
-                url: 'https://ezdu.net',
-                logo: 'https://ezdu.net/logo.png',
-                sameAs: [
-                    'https://facebook.com/ezdu',
-                    'https://youtube.com/@ezdu',
-                    'https://play.google.com/store/apps/details?id=your.app.id',
-                ],
+                url: SITE,
+                logo: `${SITE}/logo.png`,
+                sameAs,
             },
         ],
     };
@@ -43,16 +57,16 @@ export function getPageJsonLd(slug: string, name: string, description: string) {
     return {
         '@context': 'https://schema.org',
         '@type': 'Quiz',
-        '@id': `https://ezdu.net/${slug}/#quiz`,
+        '@id': `${SITE}/${slug}/#quiz`,
         name,
         description,
         inLanguage: 'bn',
         isAccessibleForFree: true,
         provider: {
             '@type': 'Organization',
-            '@id': 'https://ezdu.net/#organization',
+            '@id': `${SITE}/#organization`,
             name: 'EzDu',
-            url: 'https://ezdu.net',
+            url: SITE,
         },
     };
 }

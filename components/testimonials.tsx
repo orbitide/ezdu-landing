@@ -1,9 +1,18 @@
 'use client';
 
-import React from "react";
-import { motion, useInView } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import React from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Card } from '@/components/ui/card';
+import { Star } from 'lucide-react';
+
+function initialsFromName(name: string) {
+    return name
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((w) => w[0] ?? '')
+        .join('');
+}
 
 export const Testimonials = () => {
     const ref = React.useRef(null);
@@ -11,26 +20,23 @@ export const Testimonials = () => {
 
     const testimonials = [
         {
-            name: 'Sarah Johnson',
-            role: 'Medical Student',
-            avatar: '👩‍⚕️',
+            name: 'নাফিসা রহমান',
+            role: 'SSC পরীক্ষার্থী, ঢাকা',
             rating: 5,
-            text: 'EzDu transformed my study routine. The daily tests keep me consistent, and the XP system makes learning addictive!'
+            text: 'অধ্যায়ভিত্তিক MCQ আর মক টেস্ট এক জায়গায় পেয়ে দৈনিক রুটিন ধরে রাখা সহজ হয়েছে। ফলাফল স্ক্রিনে কী ভুল হচ্ছে সেটা স্পষ্ট দেখা যায়।',
         },
         {
-            name: 'Alex Chen',
-            role: 'Engineering Student',
-            avatar: '👨‍💻',
+            name: 'তানভীর হোসেন',
+            role: 'BCS প্রিলি প্রস্তুতি',
             rating: 5,
-            text: 'Best learning app I\'ve used. The AI explanations are incredibly detailed, and the mock tests perfectly simulate real exams.'
+            text: 'বিষয়ভিত্তিক প্র্যাকটিস আর পূর্ণাঙ্গ মক দিয়ে সময় মেনে চলা অনুশীলন করা যায়। পুরনো প্রশ্ন খুঁজে বের করতে আলাদা অ্যাপ লাগে না।',
         },
         {
-            name: 'Priya Sharma',
-            role: 'High School Student',
-            avatar: '👩‍🎓',
+            name: 'মিতা চৌধুরী',
+            role: 'HSC বিজ্ঞান বিভাগ',
             rating: 5,
-            text: 'I love the gamification! Competing on the leaderboard with my friends makes studying so much more fun.'
-        }
+            text: 'ডেইলি টেস্ট আর ব্যাখ্যাগুলো সংক্ষিপ্ত কিন্তু কাজের। সপ্তাহিক টেস্ট দিয়ে নিজের অগ্রগতি এক নজরে বোঝা যায়।',
+        },
     ];
 
     return (
@@ -41,10 +47,12 @@ export const Testimonials = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        হাজারো শিক্ষার্থীর{' '}
-                        <span className="text-emerald-400">বিশ্বস্ত সঙ্গী</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+                        ব্যবহারকারীদের <span className="text-emerald-400">অভিজ্ঞতা</span>
                     </h2>
+                    <p className="text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
+                        শিক্ষার্থীরা যে কাজগুলোতে EzDu ব্যবহার করছেন—সংক্ষিপ্ত প্রতিক্রিয়া
+                    </p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -55,20 +63,25 @@ export const Testimonials = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: index * 0.15 }}
                         >
-                            <Card className="h-full hover:scale-105 transition-transform duration-300">
+                            <Card className="h-full surface-raised-hover transition-colors duration-300 border-zinc-800/80 hover:border-zinc-600/60">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="text-4xl">{testimonial.avatar}</div>
-                                    <div>
+                                    <div
+                                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800/80 text-sm font-semibold text-zinc-200"
+                                        aria-hidden
+                                    >
+                                        {initialsFromName(testimonial.name)}
+                                    </div>
+                                    <div className="min-w-0 text-left">
                                         <h4 className="font-bold text-white">{testimonial.name}</h4>
                                         <p className="text-sm text-zinc-500">{testimonial.role}</p>
                                     </div>
                                 </div>
-                                <div className="flex gap-1 mb-4">
+                                <div className="flex gap-1 mb-4" aria-label={`${testimonial.rating} out of 5`}>
                                     {[...Array(testimonial.rating)].map((_, i) => (
                                         <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
                                     ))}
                                 </div>
-                                <p className="text-zinc-300 leading-relaxed">{testimonial.text}</p>
+                                <p className="text-zinc-300 leading-relaxed text-[15px]">{testimonial.text}</p>
                             </Card>
                         </motion.div>
                     ))}

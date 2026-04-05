@@ -1,3 +1,4 @@
+import { googlePlayHref } from "@/lib/google-play";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -5,8 +6,9 @@ type Props = {
 }
 
 export function DownloadButton({type, className}: Props) {
-    const appStoreLink: string = "https://apps.apple.com/";
-    const googlePlayLink: string = "https://play.google.com";
+    const appStoreLink =
+        process.env.NEXT_PUBLIC_APP_STORE_URL?.trim() || "https://apps.apple.com/";
+    const googlePlayLink = googlePlayHref();
 
     return type === "apple" ? (
         <a href={appStoreLink} target="_blank" rel="noopener noreferrer">
