@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
+import { getRootJsonLd } from "@/lib/jsonld";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
         ],
         type: 'website',
     },
-    twitter:{
+    twitter: {
         card: 'summary_large_image',
         title: 'EzDu — Pocket Learning Companion',
         description: 'The best platform to learn and practice. AI-powered exam prep, mock tests, and study tools.',
@@ -60,17 +61,23 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: ReactNode;
 }>) {
-  return (
-    <html lang="en" className="h-full bg-zinc-950">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    return (
+        <html lang="bn" className="h-full bg-zinc-950">
+        <head>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{__html: JSON.stringify(getRootJsonLd())}}
+            />
+        </head>
+        <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
